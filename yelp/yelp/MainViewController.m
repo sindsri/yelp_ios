@@ -203,9 +203,21 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     if (data[@"dealsSwitch"][0]) {
         [dictionary setObject:data[@"dealsSwitch"][0] forKey:@"deals_filter"];
     }
+    //sort by
+    if(data[@"sort"]) {
+        [dictionary setObject:data[@"sort"] forKey:@"sort"];
+    }
+    //category
+    if(data[@"category_filter"]) {
+        [dictionary setObject:data[@"category_filter"] forKey:@"category_filter"];
+    }
+    //radius
+    if(data[@"radius_filter"]) {
+        [dictionary setObject:data[@"radius_filter"] forKey:@"radius_filter"];
+    }
     
     [self.client searchWithDictionary:dictionary success:^(AFHTTPRequestOperation *operation, id response) {
-        NSLog(@"INside api sucess%@",response);
+        NSLog(@"SUCESS------%@",response);
         self.businesses = response[@"businesses"];
         [self.tableView reloadData];
 
