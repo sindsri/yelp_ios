@@ -218,7 +218,6 @@
 
     }else if([filter[@"name"] isEqualToString:@"Categories"]) {
         if (![self isSectionExpanded:section] && row == ([filter[@"collapsed_size"] intValue] - 1 ) ) {
-            NSLog(@"toggleExpand");
             [self toggleSection:section];
         } else {
             [self toggleSelectedRow:row withSection:section];
@@ -273,7 +272,7 @@
             return ((NSArray *)self.filterCategories[section][@"options"]).count;
         }
         else {
-            return 4;
+            return 5;
         }
     }
     return 1;
