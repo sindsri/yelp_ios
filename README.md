@@ -27,5 +27,4 @@ Notes
 
 Walkthrough
 -
-
-![Video Walkthrough](demo.gif) 
+![Demo](yelp_demo.gif)
